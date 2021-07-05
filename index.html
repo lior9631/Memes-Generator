@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Meme Creator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+    <section class="screen" onclick="showMenu()" ontouchstart="showMenu()"></section>
+
+    <section class="container">
+        <header class="header-main">
+            <section class="logo">
+                <img src="img/LOGO.png" alt="MemeGen-logo">
+            </section>
+            <button class="btn-menu icon-background" onclick="showMenu()" ontouchstart="showMenu()"></button>
+            <!-- NAvBAR -->
+            <section class="nav">
+                <button class="nav-btn btn-creator" disabled onclick="onCreator()">Creator</button>
+                <button class="nav-btn btn-gallery" disabled onclick="onGallery()">Gallery</button>
+                <button class="nav-btn  btn-memes" onclick="onMemes()">Memes</button>
+                <button class="nav-btn btn-about">About</button>
+            </section>
+        </header>
+        <main>
+            <!-- Search-Container -->
+            <section class="container-gallery">
+                <section class="panel-row search-container">
+                    <input type=" text" class="search-box" placeholder="Enter search keyword"
+                        oninput="onSearchInput(this.value)" />
+                    <div class="search-ico icon-background"></div>
+                </section>
+                <!-- Gallery -->
+                <div>
+                    <input type="file" class="select-file" style="display: none;" onchange="onSelectImg(event)"
+                        accept="image/png, image/jpeg" />
+                    <input class="btn-upload" type="button" value="Upload image"
+                        onclick="document.querySelector('.select-file').click();" />
+                </div>
+                <section class="gallery">
+                </section>
+
+            </section>
+
+            <!-- Meme creator -->
+            <section class="meme-creator hidden">
+
+                <!-- Canvas -->
+                <section class="canvas-container">
+                    <canvas class="canvas" id="my-canvas" style="border: 1px solid black;" ontouchstart="onTouchStart(event)" ontouchmove="onTouchMove(event)" ontouchend="onTouchEnd(event)" onmousedown="onCanvasDown(event)" onmousemove="onCanvasMove(event)" onmouseup="onCanvasUp(event)"></canvas>
+                </section>
+
+                <section class="panel">
+                    <!-- Lines -->
+                    <div class="panel-row line-container">
+                        <div class="line"></div>
+                    </div>
+                    <div class="panel-row btns-line">
+                        <!-- Add-row -->
+                        <button class="btn-add-line btn-panel icon-background" onclick="onAddLine()"
+                            ontouchstart="onAddLine()"></button>
+                        <!-- change line -->
+                        <button class="btn-change-line btn-panel icon-background" onclick="onChange()"></button>
+
+                        <!-- up-down line -->
+                        <button class="btn-up-line btn-panel icon-background" onclick="onLineProperty('pos', -1)"
+                            ontouchstart="onPropertyTouch('pos', -1, event)"></button>
+                        <button class="btn-down-line btn-panel icon-background" onclick="onLineProperty('pos', +1)"
+                            ontouchstart="onPropertyTouch('pos', +1, event)"></button>
+                    </div>
+                    <!-- Edit text -->
+                    <div class="panel-row">
+                        <!-- Size-text -->
+                        <button class="btn-increase-font btn-panel icon-background" onclick="onLineProperty('size', 1)"
+                            ontouchstart="onPropertyTouch('size', 1, event)"></button>
+                        <button class="btn-reduce-font btn-panel icon-background" onclick="onLineProperty('size', -1)"
+                            ontouchstart="onPropertyTouch('size', -1, event)"></button>
+                        <!-- Algin -->
+                        <button class="btn-align-left btn-panel icon-background"
+                            onclick="onLineProperty('align', 'right')"
+                            ontouchstart="onPropertyTouch('align', 'right', event)"></button>
+                        <button class="btn-align-center btn-panel icon-background"
+                            onclick="onLineProperty('align', 'center')"
+                            ontouchstart="onPropertyTouch('align', 'center', event)"></button>
+                        <button class="btn-align-right btn-panel icon-background"
+                            onclick="onLineProperty('align', 'left')"
+                            ontouchstart="onPropertyTouch('align', 'left', event)"></button>
+                    </div>
+                    <div class="panel-row">
+                        <!-- Fonts-selected -->
+                        <select class="font-selected" name="fonts" onchange="onLineProperty('font',this.value)">
+                            <option value="Impact" selected>Impact</option>
+                            <option value="Ariel">Ariel</option>
+                        </select>
+                        <!-- Colors-text -->
+
+                        <button
+                            class="btn-stroke btn-panel icon-background jscolor
+                                {valueElement:'null', closable:true,closeText:'Close', onFineChange:'onStrokePickerColor(this)'}">
+                            S
+                        </button>
+                        <button
+                            class="btn-color btn-panel icon-background jscolor
+                                {valueElement:'null', closable:true,closeText:'Close', onFineChange:'onPickerColor(this)'}">
+                            C
+                        </button>
+                    </div>
+                    <div class="panel-row">
+                        <a class="download" onclick="onDownload(this)" download="" href="#">Download</a>
+                        <a class="btn-save" onclick="onSave(this)" href="#">Save</a>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Meme Gallery -->
+            <section class="memes hidden">
+                <section class="gallery memes-gallery"></section>
+            </section>
+        </main>
+    </section>
+    <script src="lib/hammerjs/hammerjs.js"></script>
+    <script src="lib/jscolor-picker/jscolor.js"></script>
+    <script src="js/upload-service.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/gallery-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/app-service.js"></script>
+    <script src="js/app-controller.js"></script>
+</body>
+
+</html>

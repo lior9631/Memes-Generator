@@ -1,0 +1,403 @@
+body {
+  box-sizing: border-box;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  margin: auto;
+  max-width: 890px;
+}
+.screen {
+  visibility: hidden;
+  position: fixed;
+  top: 70px;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-main {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #b2b2b2;
+  margin-block-end: 5px;
+}
+.logo img {
+  width: 200px;
+}
+
+.btn-menu {
+  visibility: hidden;
+  background-image: url(../img/icons/menu.png);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 20px 0;
+  width: 40px;
+  margin-inline-end: 0px;
+  transition: background-color 0.4s;
+}
+.btn-menu:hover {
+  background-color: #d2d2d2;
+}
+
+.nav-btn {
+  padding: 10px;
+  width: 100px;
+  margin: 0;
+  font-size: large;
+  font-weight: bold;
+  background-color: #26a9ff;
+  transition: background-color 0.4s;
+}
+.nav-btn:hover {
+  background-color: #379cee;
+}
+.nav-btn:disabled {
+  cursor: default;
+  background-color: #558ec5;
+  color: #c1c0bf;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  border-bottom: 2px solid black;
+  height: 30px;
+  padding: 3px;
+  margin-block-end: 15px;
+}
+.search-ico {
+  background: url(../img/icons/search.png);
+  width: 20px;
+  height: 100%;
+  border: none;
+  margin-inline-start: 3px;
+}
+.search-box {
+  height: 100%;
+  padding: 5px 5px 0px;
+  border: none;
+  outline: none;
+  font-size: medium;
+}
+
+.btn-upload {
+  padding: 10px;
+  width: 188px;
+  font-size: x-large;
+  border: 4px solid #c8a6ff;
+  background-color: #7e25c2;
+  color: white;
+  border: 1px solid darkseagreen;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-block-end: 10px;
+}
+
+.meme-creator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  width: 500px;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.container-gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.img-gallery-box {
+  margin: 5px;
+  cursor: pointer;
+}
+.img-gallery-box img {
+  max-width: 200px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+}
+.panel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+.line {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  height: 60px;
+}
+.panel .line textarea {
+  width: 200px;
+  height: 25px;
+  margin-inline-end: 10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btns-line {
+  margin: 0px 0 20px;
+}
+.panel-properties {
+  margin-top: 5px;
+}
+.line-container {
+  margin-bottom: 0px;
+}
+
+.btn-panel {
+  font-family: Tahoma, "Helvetica Neue", Helvetica, sans-serif;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-inline-end: 2px;
+}
+.btn-add-line {
+  background: url(../img/icons/add.png);
+  background-color: #2310e6e6;
+}
+.btn-change-line {
+  background: url(../img/icons/replace-arrow.png);
+  background-color: burlywood;
+}
+.btn-delete-line {
+  background: url(../img/icons/delete.png);
+  background-color: rgb(197, 6, 44);
+}
+.btn-up-line {
+  background: url(../img/icons/up-arrow.png);
+  background-color: rgb(5, 179, 48);
+}
+.btn-down-line {
+  background: url(../img/icons/down-arrow.png);
+  background-color: rgb(5, 179, 48);
+}
+.btn-increase-font {
+  background: url(../img/icons/increase-font-size.png);
+}
+.btn-reduce-font {
+  background: url(../img/icons/reduce-font-size.png);
+}
+.btn-align-left {
+  background: url(../img/icons/align-left.png);
+}
+.btn-align-center {
+  background: url(../img/icons/align-center.png);
+}
+.btn-align-right {
+  background: url(../img/icons/align-right.png);
+}
+.btn-color {
+  background-image: url(../img/icons/increase-font-size.png);
+}
+
+.font-selected {
+  margin-inline-end: 10px;
+  height: 50px;
+  width: 145px;
+  padding: 5px;
+  font-size: large;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.download {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #9e5adb;
+  border-radius: 10px;
+  border: 3px solid #b310b3;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 5px;
+  margin-inline-end: 5px;
+  color: black;
+  transition: box-shadow 450ms, color 450ms;
+}
+.download:hover {
+  box-shadow: inset 0 0 20px 20px purple;
+  color: white;
+}
+.btn-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  text-transform: uppercase;
+  height: 50px;
+  width: 80px;
+  border: 3px solid #3fa736;
+  background-color: #21ec68;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: medium;
+  transition: box-shadow 450ms, color 450ms;
+}
+.btn-save:hover {
+  box-shadow: inset 0 0 20px 20px rgb(8, 128, 28);
+  color: white;
+}
+.memes-gallery {
+  padding: 10px;
+  font-size: xx-large;
+}
+.meme-gallery-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+  margin-block-end: 10px;
+}
+.meme-gallery-box .btn-meme-delete {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  background: url(../img/icons/delete.png);
+  align-self: flex-end;
+  background-color: firebrick;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+.meme-gallery-box .img-meme {
+  width: 200px;
+  font-size: large;
+}
+
+/* HELPERS */
+.hidden {
+  display: none;
+}
+.icon-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+@media (max-width: 930px) {
+  .meme-creator {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: 95vw;
+  }
+  .header-main {
+    padding: 5px;
+  }
+  .logo img {
+    width: 200px;
+  }
+  .nav {
+    z-index: 2;
+    height: 100vh;
+    width: 140px;
+    position: fixed;
+    right: 0;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s;
+  }
+  .nav-btn {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 1px;
+  }
+  .btn-menu {
+    visibility: visible;
+  }
+  .show-menu .nav {
+    transform: translateX(0);
+  }
+  .show-menu .screen {
+    visibility: visible;
+  }
+  .img-gallery-box img {
+    width: 175px;
+  }
+  .canvas {
+    width: 96vw;
+  }
+  .panel {
+    padding: 0px 0px 5px;
+  }
+  .btn-panel {
+    width: 40px;
+    height: 40px;
+  }
+  .btns-line {
+    margin-bottom: 5px;
+  }
+  .font-selected {
+    margin-inline-end: 6px;
+    height: 40px;
+    width: 119px;
+  }
+  .panel .line textarea {
+    width: 190px;
+    height: 24px;
+    font-size: 18px;
+  }
+  .download {
+    height: 40px;
+  }
+  .btn-save {
+    height: 40px;
+  }
+}
